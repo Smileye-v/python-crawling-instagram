@@ -13,10 +13,10 @@ uri = 'https://www.instagram.com/graphql/query/?query_hash=a5164aed103f24b03e7b7
 
 headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36',
-    'cookie': 'ig_did=6A7D5C2A-E73A-4071-AABA-9214805D7E0A; mid=X8X-iwALAAERSlIcf9X14EZ90Gc9; ig_nrcb=1;csrftoken=5KaZk9aQJWk7MExg0nwXJAnJa95ouU7b; ds_user_id=5729010920; sessionid=5729010920:D0VzTfaukAuRoR:13;shbid=8458; shbts=1616835211.2197564; rur=FTW'
+    'cookie': '在这里填写你的cookie'
 }
 
-proxies = {'http': 'http://127.0.0.1:4780', 'https': 'http://127.0.0.1:4780'}
+proxies = {'http': 'http://127.0.0.1:4780', 'https': 'http://127.0.0.1:4780'}#每个人的代理不一样，记得修改
 
 
 def get_html(url):
@@ -110,7 +110,7 @@ def main(user):
         try:
             content = get_content(urls[i])
             endw = 'mp4' if r'mp4?_nc_ht=scontent' in urls[i] else 'jpg'
-            file_path = r'F:\INS\{0}\{1}.{2}'.format(user, md5(content).hexdigest(), endw)
+            file_path = r'{这里填写图片保存路径}\{0}\{1}.{2}'.format(user, md5(content).hexdigest(), endw)
             if not os.path.exists(file_path):
                 with open(file_path, 'wb') as f:
                     print('第{0}张下载完成： '.format(i) + urls[i])
