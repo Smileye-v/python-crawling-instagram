@@ -102,7 +102,7 @@ def main(user):
     url = url_base + user + '/'
     html = get_html(url)
     urls = get_urls(html)
-    dispatch = r'.\{0}'.format(user)
+    dispatch = r'{这里填写保存的件夹创建位置}\{0}'.format(user)
     if not os.path.exists(dispatch):
         os.mkdir(dispatch)
     for i in range(len(urls)):
